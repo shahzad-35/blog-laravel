@@ -26,7 +26,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    <div class="col-md-4">
+                    <div class="col-md-6">
                         @if(!empty($profile))
                             <img src="{{ $profile->profile_pic}}" class="avatar" alt="" />
                             <p class="lead">{{$profile->name}}</p>
@@ -45,18 +45,18 @@
                                 <ul class="nav nav-pills">
                                     <li role="presentation">
                                         <a href='{{url("/view/{$post->id}")}}'>
-                                            <span class="fa fa-eye"> VIEW</span>
+                                            <span class="fa fa-eye mr-2"> VIEW</span>
                                         </a>
                                     </li>
                                     @if(!empty($user_id) && $user_id== $post->user_id)
                                         <li role="presentation">
                                             <a href='{{url("/edit/{$post->id}")}}'>
-                                                <span class="fa fa-pencil-square-o"> EDIT</span>
+                                                <span class="fa fa-pencil-square-o mr-2"> EDIT</span>
                                             </a>
                                         </li>
                                         <li role="presentation">
                                             <a href='{{url("/delete/{$post->id}")}}'>
-                                                <span class="fa fa-trash"> DELETE</span>
+                                                <span class="fa fa-trash mr-2"> DELETE</span>
                                             </a>
                                         </li>
                                     @elseif (!empty($result) && $result->role == 'Admin')

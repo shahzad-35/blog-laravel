@@ -14,8 +14,12 @@ use App\User;
 class PostController extends Controller
 {
     public function post(){
+        if(Auth::user() != null){
         $categories = Category::all();
         return view('posts.post', ['categories' => $categories]);
+        }else{
+            return redirect('/')->with('response', 'Login First to create post');
+        }
     }
 
     public function addPost(Request $request){

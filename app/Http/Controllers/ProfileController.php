@@ -23,10 +23,10 @@ class ProfileController extends Controller
             'designation'=> 'required',
             'profile_pic'=> 'required'
             ]);
-            $profiles = new Profile;
-            $profiles->name = $request->input('name');
-            $profiles->user_id=Auth::user()->id;
-            $profiles->designation = $request->input('designation');
+
+            $request_params['name'] = $request->input('name');
+            $request_params['user_id']=Auth::user()->id;
+            $request_params['designation'] = $request->input('designation');
 
             if(Input::hasFile('profile_pic')){
                 $this->validate($request, [
@@ -36,9 +36,9 @@ class ProfileController extends Controller
                 $file->move(public_path().'/uploads',$file->getClientOriginalName());
                 $url = URL::to("/") . '/uploads/'.$file->getClientOriginalName();
             }
-            $profiles->profile_pic = $url;
-            $profiles->save();
-            return redirect ('/home')->with('response', 'Profile Added Successfully');
+            $request_params['profile_pic'] = $url;
+            Profile::where('user_id', Auth::user()->id)->update($request_params);
+            return redirect ('/home')->with('response', 'Profile Updated Successfully');
     }
 
     public function edit($user_id){
