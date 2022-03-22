@@ -1,0 +1,46 @@
+[
+    {
+      "id": 1,
+      "category": "Sport"
+    },
+    {
+      "id": 2,
+      "category": "Science"
+    },
+    {
+      "id": 3,
+      "category": "Travel"
+    },
+    {
+      "id": 4,
+      "category": "LifeStyle"
+    },
+    {
+      "id": 5,
+      "category": "Food"
+    },
+    {
+      "id": 6,
+      "category": "Fashion"
+    },
+    {
+      "id": 7,
+      "category": "News"
+    },
+    {
+      "id": 8,
+      "category": "Technology"
+    },
+    {
+      "id": 9,
+      "category": "Music"
+    },
+    {
+      "id": 10,
+      "category": "Fitness"
+    },
+    {
+      "id": 11,
+      "category": "Finance"
+    }
+  ]
