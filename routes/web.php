@@ -35,3 +35,7 @@ Route::get('/getDashboard', 'DashBoardController@getDashboard');
 Route::get('/editU/{id}', 'ProfileController@edit');
 Route::post('/editUser/{id}', 'ProfileController@editUser');
 Route::get('/deleteU/{id}', 'ProfileController@deleteUser');
+
+
+Route::get('auth/google', 'GoogleController@redirectToGoogle');
+Route::get('auth/google/callback', 'GoogleController@handleGoogleCallback');
